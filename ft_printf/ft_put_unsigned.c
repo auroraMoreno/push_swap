@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aumoreno <aumoreno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 08:57:11 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/04/27 14:01:09 by aumoreno         ###   ########.fr       */
+/*   Created: 2023/12/06 12:07:32 by aumoreno          #+#    #+#             */
+/*   Updated: 2024/01/13 09:27:44 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-
-void push_swap()
+int	ft_put_unsigned(unsigned int u)
 {
-	// vamos a empezar pintando la lista de números que nos llegue por consola 
-	
-	// si solo se puede pasar un numero a la vez, habrá que guardarlo en una lista de integer 
-	// no sé porque dudo probablemente vaya a tener que pasarla a una lista de ints
+	int	len;
 
-	// cambio to test ssh key 
-}
-
-int main(int argc, char *argv[])
-{
-	    
-	push_swap();
-	return (0);
+	len = 0;
+	if (u <= 9)
+	{
+		len += ft_putchar(u + '0');
+	}
+	else
+	{
+		len += ft_put_unsigned(u / 10);
+		len += ft_put_unsigned(u % 10);
+	}
+	return (len);
 }

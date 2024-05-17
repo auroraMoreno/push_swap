@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/05/15 17:48:18 by aumoreno         ###   ########.fr       */
+/*   Created: 2024/05/15 17:22:42 by aumoreno          #+#    #+#             */
+/*   Updated: 2024/05/15 18:41:23 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
-#include <stdio.h>
-#include <string.h>
-
-// incluimos el printf: 
-
-# include "ft_printf/ft_printf.h"
-
-int main();
+int main(int argc, char* argv[])
+{
+     
+    return (0);
+}
