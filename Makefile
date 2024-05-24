@@ -6,7 +6,7 @@
 #    By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/27 08:57:17 by aumoreno          #+#    #+#              #
-#    Updated: 2024/05/15 18:12:50 by aumoreno         ###   ########.fr        #
+#    Updated: 2024/05/17 13:30:40 by aumoreno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,11 @@ SRCS = main.c # luego add el fichero operations.c o algo asi para las operations
 # hay que add el printf: 
 
 FT_PRINTF_PATH = ft_printf/
+LIBFT_PATH = libft/
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(FT_PRINTF_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(LIBFT_PATH)
 
 # Without this assignment, 
 # you would need to manually list all the object files in the linker command, 
@@ -36,7 +38,8 @@ $(EXEC): $(OBJS)
 
 $(EXEC): $(OBJS)
 	@make -C $(FT_PRINTF_PATH) --silent
-	@$(CC) $(CFLAGS) $(SRCS) -o $(EXEC) -I./ft_printf -L./ft_printf -l ftprintf
+	@make -C $(LIBFT_PATH) --silent
+	@$(CC) $(CFLAGS) $(SRCS) -o $(EXEC) -I./libft -L./libft -lft -I./ft_printf -L./ft_printf -l ftprintf
 
 
 clean:
@@ -47,6 +50,8 @@ fclean:  clean
 	rm -f $(EXEC)
 	rm -f $(OBJS)
 	@make -C $(FT_PRINTF_PATH) fclean --silent
+	@make -C $(LIBFT_PATH) fclean --silent
+
 
 
 re: fclean all
