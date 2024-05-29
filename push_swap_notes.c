@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:11 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/05/18 09:59:55 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/05/26 12:08:30 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,28 @@ void insert_end(Node** root, int value)
 	
 }
 
+void deallocate(Node** root)
+{
+	// we are taking a double pointer to root, so that at the end we can set the root to NULL so that we know that the list does not exist anymore
+	// if we did:
+	// free(*root); // we will be deallocating the first node, but the rest of the nodes would still be allocated but they won't be accesible 
+	// you want to go to every single pointer and deallocate them one by one 
+	// so a linked list always iterates from left to right 
+	// but we have to dealloc in a way where  we don't destroy our own memory
+	Node* curr = *root; 
+	while(curr != NULL)
+	{
+	// we are going to have 2 variables, one with the node we want to dealloc and another with the next node 
+		Node* aux = curr; 
+		curr = curr->next; 
+		free(aux);
+		// now even if we enter with one element, that first element is going to become aux and curr will become null as curr->next is null
+	}
+	
+	*root = NULL; //the value (*) of root is now null 
+	//we have to do this, bc root* still has that value BUT the memory is no longer allocated 
+}
+
 int main()
 {
 	//small check in case Node is empty, doesn't have an initial value: 
@@ -103,7 +125,7 @@ int main()
 		curr = curr->next; 
 	}
 
-
+	deallocate(&root);
 	return (0);
 }
 
