@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aumoreno <aumoreno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/05/29 14:39:36 by aumoreno         ###   ########.fr       */
+/*   Created: 2024/05/29 11:30:49 by aumoreno          #+#    #+#             */
+/*   Updated: 2024/05/29 15:32:10 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// code the push_swap allowed operations 
 
-#include <stdio.h>
-#include <string.h>
-
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-
-typedef struct StackNumbers{
-	int x;
-	struct StackNumbers* next;
-}StackNumbers;
-
-typedef struct StackAux{
-    int x;
-    struct StackAux* next;
-}StackAux;
+// sa, sb, ss  
+// 
 
 
+// pa, pb
 
 
-int main();
+// empezar por aqui
+// ra, rb, rr
+
+
+// rra, rrb, rrr 
+
