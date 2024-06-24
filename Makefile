@@ -6,7 +6,7 @@
 #    By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/27 08:57:17 by aumoreno          #+#    #+#              #
-#    Updated: 2024/05/17 13:30:40 by aumoreno         ###   ########.fr        #
+#    Updated: 2024/06/17 16:51:30 by aumoreno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ EXEC = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra 
 
-SRCS = main.c # luego add el fichero operations.c o algo asi para las operations: push, swap, rotate y reverse 
+SRCS = main.c general_utils.c stacks_utils.c error_utils.c # luego add el fichero operations.c o algo asi para las operations: push, swap, rotate y reverse 
 
 # hay que add el printf: 
 

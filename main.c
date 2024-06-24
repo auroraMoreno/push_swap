@@ -3,74 +3,88 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aumoreno <aumoreno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 11:05:54 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/05/29 15:19:02 by aumoreno         ###   ########.fr       */
+/*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
+/*   Updated: 2024/06/23 12:59:58 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-//las operaciones de swap, les deberá de llegar tanto  el stacknumbers omo el stackaux  
-
-
-// left to right 
-void ft_insert_list(StackNumbers** root, int value)
+int main(int argc, char **argv)
 {
-    StackNumbers* new_node =  malloc(sizeof(StackNumbers));
-    
-    if(!new_node)
-        return;
+    ft_printf("starting\n");
+    // declaramos los punteros
+    t_list *a;       // we will store the numbers here
+    t_list *b;       // this is empty
+    char **str_data; // this is for when the numbers be coming like "..."
+    int should_free;
 
-    new_node->next = NULL;
-    new_node->x = value;
-
-    // si la lista esta vacia:
-    if(*root == NULL)
+    // comprobaciones errores
+    /**
+     * 2 o mas en argc
+     * [1] not empty
+     * (argv[1][0] checks if is the null character)
+     */
+    should_free = 0;
+    if (argc < 2 || (argc == 2 && !argv[1][0]))
+        return (ft_putendl_fd("Error", 2), 0);
+    // tener en cuenta 2 casos
+    /**
+     * numeros sueltos
+     * numeros entre " "
+     */
+    else if (argc == 2)
     {
-        *root = new_node;
-        return;
-    }    
-
-    StackNumbers *curr = *root;
-
-    while(curr->next != NULL)
-        curr = curr->next;
-
-    curr->next = new_node;
-}
-
-// para ver como van poniendose los numeros 
-void ft_print_list(StackNumbers* node)
-{
-    while(node != NULL)
-    {
-        ft_printf("%d\n", node->x);
-        node = node->next;
+        ft_printf("splitting\n");
+        // esto significa q lo mas probable es q los numeros vengan asi "..."
+        str_data = ft_split(argv[1], ' ');
+        should_free = 1;
+        ft_printf("end split");
     }
-}
-
-
-int main(int argc, char* argv[])
-{
-    
-    StackNumbers* stack = NULL;
-    
-    // empezar en 1 bc el argv[0] es el nombre de exe 
-    // mientras argv, empezando en 0, tenga cosas, lo inserto en una lista (ver insert_end)
-    int i;
-    (void)argc;
-    i = 1;
-    while(argv[i] != NULL)
+    else
     {
-        // inserto en el stack 1
-        ft_insert_list(&stack, ft_atoi(argv[i]));
-        i++;
+        ft_printf("not splitting\n");
+        // aqui es si es más de dos, es decir vienen asi: 3 7 99 42
+        str_data = argv + 1;
     }
-    
-    //we should probs free this at some point 
-    ft_print_list(stack);
-    return (0);
+
+    ft_printf("about to insert\n");
+
+    /*guardar en stack A*/
+    a = ft_insert_initial(str_data, 0);
+    b = NULL;
+    ft_printf("end insert\n");
+    // GESTION DE ERRORES
+    /**
+     * cuando guardemos en stack a habrá que ver si:
+     * vienen duplicados,
+     * solo admita +,- o digits
+     * integer overflow (usaremos longs) => argumentos superiores a un número entero
+     *  */
+    ft_error_checking(a);
+    ft_printf("errors not found\n");
+    // comprobar si está sorted
+    // ft_issorted(a);
+
+    // si no lo está we sort it (chunkos time)
+
+    // print the operations
+    ft_printf("about to print the list\n");
+    // printing the numbers;
+    ft_print_list(a);
+    ft_printf("printed the list\n");
+
+    // clean the whole thing up
+    if (should_free == 1)
+    {
+        ft_free_arr(str_data); // not able to use free bc str is an array
+        ft_printf("freed the str");
+    }
+    ft_printf("about to free\n");
+    ft_lstclear(&a, NULL);
+    ft_lstclear(&b, NULL);
+    ft_printf("freed mem");
+    return(0);
 }

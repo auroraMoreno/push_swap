@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aumoreno <aumoreno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 21:44:06 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/01/13 10:10:54 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/06/22 10:25:56 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_len(const char *s)
 {
 	size_t	i;
 
@@ -35,7 +35,7 @@ int	ft_putstr(char *s)
 	{
 		return (write(1, "(null)", 6));
 	}
-	len = ft_strlen(s);
+	len = ft_len(s);
 	return (write(1, s, len));
 }
 
