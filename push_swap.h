@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/22 10:27:38 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/05 02:33:34 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,33 @@ t_list *ft_lstnew(void *content);
 void ft_lstclear(t_list **lst, void (*del)(void *));
 int ft_lstsize(t_list *lst);
 void ft_print_list(t_list *numbers);
+void ft_lst_del_elment(t_list *el, void (*del)(void *));
+int ft_issorted(t_list *numbers); //cambiar esta de sitio 
+
+/*OPERATIONS*/
+/* push */
+void ft_insert_first(t_list **lst, t_list *new_value);
+void ft_push(t_list **dest, t_list **src);
+void ft_pa(t_list  **a, t_list **b);
+void ft_pb(t_list **a, t_list **b);
+/* swap */
+void ft_swap_a(t_list *a);
+void ft_swap_b(t_list *b);
+void ft_ss(t_list *a, t_list *b);
+
+/* rotate */
+void ft_rotate(t_list *lst);
+void ft_rotate_a(t_list *a);
+void ft_rotate_b(t_list *b);
+void ft_rr(t_list *a, t_list *b); 
+
+
+/* reverse rotating */
+t_list *ft_get_last(t_list *lst);
+void ft_reserve_rotate(t_list *lst);
+void ft_reverse_rotate_a(t_list *a);
+void ft_reverse_rotate_b(t_list *b);
+void ft_rrr(t_list *a, t_list *b);
 
 
 /*GENERAL UTILS*/

@@ -6,7 +6,7 @@
 #    By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/27 08:57:17 by aumoreno          #+#    #+#              #
-#    Updated: 2024/06/17 16:51:30 by aumoreno         ###   ########.fr        #
+#    Updated: 2024/07/05 02:32:58 by aumoreno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ EXEC = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra 
 
-SRCS = main.c general_utils.c stacks_utils.c error_utils.c # luego add el fichero operations.c o algo asi para las operations: push, swap, rotate y reverse 
+SRCS = main.c general_utils.c stacks_utils.c error_utils.c push_operations.c \
+		swap_operations.c rotate_operations.c reverse_rotate_operations.c
+
+# luego add el fichero operations.c o algo asi para las operations: push, swap, rotate y reverse 
 
 # hay que add el printf: 
 
@@ -28,7 +31,7 @@ LIBFT_PATH = libft/
 
 # Without this assignment, 
 # you would need to manually list all the object files in the linker command, 
-# which can be error-prone and tedious, especially in larger projects.
+# which can be error-prone and tedious, especially in larger projects.            
 
 OBJS = $(SRCS:.c=.o) # needed for linking the final executable 
 

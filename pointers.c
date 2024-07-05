@@ -3,7 +3,7 @@
 
 int main(){
     int a = 16; 
-    int* p = &a; 
+    int* p = &a;    
     // u can also use the * to set the value at that memory address:
     *p = 17; // deref p equals 17. 
     // if we did p = 17, that would set the actual addres that p is pointing to 17

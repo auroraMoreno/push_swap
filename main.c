@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/23 12:59:58 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/05 02:35:38 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,40 @@ int main(int argc, char **argv)
     ft_error_checking(a);
     ft_printf("errors not found\n");
     // comprobar si está sorted
-    // ft_issorted(a);
+    /*/
+    if(ft_issorted(a) == 1)
+    {
+        // it it's ordered we success
+        exit(EXIT_SUCCESS);
+    }*/
 
     // si no lo está we sort it (chunkos time)
+    ft_printf("the list is not sorted\n");
 
+    /* PUSHH!!!!! */
+    // ft_printf("checking the push operation\n");
+    // ft_pb(&a,&b);
+
+    /* SWAPPING!!! */
+    // ft_printf("going into the swap a op\n");
+    // ft_swap_a(a);
+
+    /* ROTATING!!!! */
+    // ft_printf("going into the rotate a op\n");
+    // ft_rotate_a(a);
+
+
+    /* REVERSINGGG!!! */
+    ft_printf("going into the rotate a op\n");
+    ft_reverse_rotate_a(a);
+
+    
     // print the operations
-    ft_printf("about to print the list\n");
+    ft_printf("about to print the list a\n");
     // printing the numbers;
     ft_print_list(a);
+    // ft_printf("about to print the list b\n");
+    // ft_print_list(b);
     ft_printf("printed the list\n");
 
     // clean the whole thing up

@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:28:08 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/24 18:22:49 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/06/30 10:19:38 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int ft_lstsize(t_list *lst)
 }
 
 //repasar punteros empty
+//creates a new element for a linked list
+// void bc it can be from any type 
 t_list *ft_lstnew(void *content)
 {
     t_list *element;
@@ -75,6 +77,15 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
     // free(*lst);
     *lst = NULL;
             
+}
+
+void ft_lst_del_elment(t_list *el, void (*del)(void *))
+{
+    if(!el)
+        return;
+    if(del)
+        del(el->value);
+    free(el);
 }
 
 int ft_issorted(t_list *numbers)
