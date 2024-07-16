@@ -6,13 +6,24 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 13:52:34 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/23 11:31:37 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/16 00:26:15 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*util function to use in general*/
+
+void ft_select_alg(t_list **a, t_list **b)
+{
+    // for 2,3,4,5
+    //list size loops!! we pass the first node and count from there 
+    if(ft_lstsize(*a) == 2)
+        ft_swap_a(*a);
+    else if(ft_lstsize(*a) == 3)
+        ft_sort_three(a,b);
+    
+}
 
 void ft_free_arr(char **arr)
 {

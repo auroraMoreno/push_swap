@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/05 02:35:38 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/16 02:04:50 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,20 @@ int main(int argc, char **argv)
     ft_error_checking(a);
     ft_printf("errors not found\n");
     // comprobar si está sorted
-    /*/
+    
     if(ft_issorted(a) == 1)
     {
         // it it's ordered we success
+        ft_printf("the list is sorted\n");
         exit(EXIT_SUCCESS);
-    }*/
+    }
 
     // si no lo está we sort it (chunkos time)
     ft_printf("the list is not sorted\n");
+
+    // depending if 2,3,4,5 or more 
+    // if 2,3,4,5 then "hard code" if more the alg
+    ft_select_alg(&a,&b);
 
     /* PUSHH!!!!! */
     // ft_printf("checking the push operation\n");
@@ -90,17 +95,17 @@ int main(int argc, char **argv)
 
 
     /* REVERSINGGG!!! */
-    ft_printf("going into the rotate a op\n");
-    ft_reverse_rotate_a(a);
+    // ft_printf("going into the rotate a op\n");
+    // ft_reverse_rotate_a(a);
 
     
-    // print the operations
-    ft_printf("about to print the list a\n");
-    // printing the numbers;
-    ft_print_list(a);
-    // ft_printf("about to print the list b\n");
-    // ft_print_list(b);
-    ft_printf("printed the list\n");
+    // // print the operations
+        ft_printf("about to print the list a\n");
+    // // printing the numbers;
+        ft_print_list(a);
+    // // ft_printf("about to print the list b\n");
+    // // ft_print_list(b);
+    // ft_printf("printed the list\n");
 
     // clean the whole thing up
     if (should_free == 1)
@@ -108,7 +113,7 @@ int main(int argc, char **argv)
         ft_free_arr(str_data); // not able to use free bc str is an array
         ft_printf("freed the str");
     }
-    ft_printf("about to free\n");
+    ft_printf("about to free\n"); //CHECK WITH VALGRIND
     ft_lstclear(&a, NULL);
     ft_lstclear(&b, NULL);
     ft_printf("freed mem");

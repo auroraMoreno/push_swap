@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/05 02:33:34 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/16 02:01:39 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct s_list
 } t_list;
 
 int main();
+
+/*ALGORITHM*/
+void ft_first_case(t_list **a, t_list **b);
+void ft_second_case(t_list **a, t_list **b);
+void ft_third_case(t_list **a, t_list **b);
+void ft_sort_three(t_list **a, t_list **b);
 
 /*UTILITIES FOR OUR STACKS*/
 t_list *ft_insert_initial(char *args[], int index);
@@ -65,6 +71,7 @@ void ft_rrr(t_list *a, t_list *b);
 /*GENERAL UTILS*/
 int ft_strcmp(char *s1, char *s2);
 void ft_free_arr(char **arr);
+void ft_select_alg(t_list **a, t_list **b);
 
 
 /*ERROR HANDLING*/

@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:28:08 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/30 10:19:38 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/16 00:03:01 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,9 @@ int ft_issorted(t_list *numbers)
 {
     t_list *curr; 
 
+    if(!numbers)
+        return (0);  //check this if it should return 0 or what hehe 
+    
     curr = numbers;
 
     while(curr->next)
