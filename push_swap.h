@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/16 02:01:39 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/18 22:29:42 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void ft_first_case(t_list **a, t_list **b);
 void ft_second_case(t_list **a, t_list **b);
 void ft_third_case(t_list **a, t_list **b);
 void ft_sort_three(t_list **a, t_list **b);
+void ft_sort_four(t_list **a, t_list **b);
+int ft_get_min_value(t_list *a);
 
 /*UTILITIES FOR OUR STACKS*/
 t_list *ft_insert_initial(char *args[], int index);

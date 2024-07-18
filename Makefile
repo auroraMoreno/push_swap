@@ -6,7 +6,7 @@
 #    By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/27 08:57:17 by aumoreno          #+#    #+#              #
-#    Updated: 2024/07/16 01:59:55 by aumoreno         ###   ########.fr        #
+#    Updated: 2024/07/18 22:29:07 by aumoreno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 SRCS = main.c general_utils.c stacks_utils.c error_utils.c push_operations.c \
 		swap_operations.c rotate_operations.c reverse_rotate_operations.c \
-		algorithm1.c
+		algorithm_three.c algorithm_four.c
 
 # luego add el fichero operations.c o algo asi para las operations: push, swap, rotate y reverse 
 

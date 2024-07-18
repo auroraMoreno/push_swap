@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 13:52:34 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/16 00:26:15 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/18 22:28:15 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void ft_select_alg(t_list **a, t_list **b)
         ft_swap_a(*a);
     else if(ft_lstsize(*a) == 3)
         ft_sort_three(a,b);
+    else if(ft_lstsize(*a) == 4)
+        ft_sort_four(a,b);
     
 }
 

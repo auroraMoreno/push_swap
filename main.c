@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/16 02:04:50 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/18 22:28:36 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int main(int argc, char **argv)
     // depending if 2,3,4,5 or more 
     // if 2,3,4,5 then "hard code" if more the alg
     ft_select_alg(&a,&b);
-
     /* PUSHH!!!!! */
     // ft_printf("checking the push operation\n");
     // ft_pb(&a,&b);
