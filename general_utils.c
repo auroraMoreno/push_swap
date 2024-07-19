@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 13:52:34 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/18 22:28:15 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/19 17:40:51 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,26 @@ void ft_select_alg(t_list **a, t_list **b)
         ft_sort_three(a,b);
     else if(ft_lstsize(*a) == 4)
         ft_sort_four(a,b);
+    else if(ft_lstsize(*a) == 5)
+        ft_sort_five(a,b);
+    
+}
+
+int ft_get_min_value(t_list *a)
+{
+    int min;
+    t_list *curr;
+
+    min = ft_atoi(a->value);
+    curr = a;
+    while(curr)
+    {
+        if(ft_atoi(curr->value) < min)
+            min = ft_atoi(curr->value);
+        curr = curr->next;
+    }
+
+    return min;
     
 }
 
