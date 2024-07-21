@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 20:36:38 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/30 10:16:49 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/22 00:53:28 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,18 @@ void ft_push(t_list **dest, t_list **src)
 {
     t_list *head; //like the head
     t_list *new_first; //will be the new element 
-    ft_printf("ft_push \n");
     // find first element of b 
     // aactualizamos en el src para poner la nueva head
     head = (*src)->next; //el antiguo "segundo" ahora es el nuevo primero 
-    ft_printf("found the head and updated it \n");
     // insertamos en la lista dest
         //creamos el nuevo elemento para la lista a
         //src es b entonces el new element tiene que ser el primero de b
-    ft_printf("creamos el new element for a \n");
     new_first = ft_lstnew((*src)->value);
-    ft_printf("creado, ahora insertamos delante de a el new_node creado \n");
     ft_insert_first(dest, new_first);
-    ft_printf("insertado, ahora borramos del b \n");
     // borramos en src ya no esté ese elemento
     ft_lst_del_elment(*src, NULL);
-    ft_printf("borrado, ahora ponemos que el antiguo segundo sea el nuevo priemro del b \n");
     *src = head; //update de src list to point to the new head 
-    ft_printf("done push \n");
+
     
 }
 
@@ -91,7 +85,6 @@ b => dest
 */
 void ft_pb(t_list **a, t_list **b)
 {
-    ft_printf("push b\n");
     if(!*a)
         return;
     ft_push(b,a);

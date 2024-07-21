@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 12:09:00 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/05 02:33:55 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/22 00:22:54 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,21 @@ void ft_rr(t_list *a, t_list *b)
     ft_rotate_a(a);
     ft_rotate(b);
     ft_printf("rr\n");
+}
+
+
+void ft_rotate_list(int *top_pos, int *bottom_pos, t_list **b)
+{
+    if(*top_pos <= *bottom_pos)
+    {
+        ft_rotate_b(*b);
+        (*top_pos)--;
+        (*bottom_pos)++;
+    }
+    else
+    {
+        ft_reverse_rotate_b(*b);
+        (*top_pos)++;
+        (*bottom_pos)--;
+    }
 }

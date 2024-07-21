@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/19 19:50:18 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/22 00:20:40 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,20 @@ void ft_third_case(t_list **a, t_list **b);
 void ft_sort_three(t_list **a, t_list **b);
 void ft_sort_four(t_list **a, t_list **b);
 void ft_sort_five(t_list **a, t_list **b);
+void ft_do_alg(t_list **a, t_list **b);
+void ft_move_to_a(t_list **a, t_list **b);
+int ft_move_to_b(t_list **a, t_list **b, int *chunks);
+int ft_chunk_has_elements(t_list *a, int i, int *chunks);
+int *ft_generate_segments(t_list *lst);
+
+/*ALGORITHM UTILS*/
+int ft_is_in_range(int n, int i, int *chunks);
+int ft_get_max_pos(t_list *lst);
 int ft_get_min_value(t_list *a);
+int ft_get_max_value(t_list *lst);
+int ft_get_max_pos(t_list *lst);
+void ft_rotate_list(int *top_pos, int *bottom_pos, t_list **b);
+
 
 /*UTILITIES FOR OUR STACKS*/
 t_list *ft_insert_initial(char *args[], int index);

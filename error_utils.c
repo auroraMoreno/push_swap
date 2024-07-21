@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:51:51 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/06/23 11:20:10 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/22 01:29:09 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void ft_error_checking(t_list *lst)
         ft_error_handling(lst);
         exit(EXIT_SUCCESS);        
     }
-    ft_printf("checking\n");
     ft_error_handling(lst); //THIS PART DOESNT MAKE SENSE BUT WE'LL FIGURE IT OUT LATER
 }
 
@@ -33,20 +32,17 @@ void ft_error_handling(t_list *lst)
     t_list *curr;
 
     //poner q mire si es un integer primero, es más óptimo 
-    ft_printf("handling\n");
     
     // check for duplicates 
     if(ft_check_duplicates(lst) ==  1) 
         ft_error();
     curr = lst;
-    ft_printf("no duplicates\n");
     while(curr)
     {
         if(!ft_isint(curr->value) || ft_strlen(curr->value) < 1) //don't know if this really makes sense 
             ft_error();
         curr = curr->next;
     }
-    ft_printf("finished hand\n");
     
 }
 
@@ -59,7 +55,6 @@ int ft_check_duplicates(t_list *lst)
     curr = lst;
     if(!curr)
         return (1); // return 1, lst being null will also be considered an eror 
-    ft_printf("duplicates\n");
     
     while(curr->next)
     {
@@ -72,7 +67,6 @@ int ft_check_duplicates(t_list *lst)
         }  
         curr = curr->next; 
     }
-    ft_printf("end duplicates\n");
 
     return(0);
 }
