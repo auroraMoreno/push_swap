@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/28 19:07:09 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/28 23:27:16 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_do_alg(t_list **a, t_list **b);
 void	ft_move_to_a(t_list **a, t_list **b);
 int		ft_move_to_b(t_list **a, t_list **b, int *chunks);
 int		ft_chunk_has_elements(t_list *a, int i, int *chunks);
-void	ft_chunk_has_elements_test(t_list **a, t_list **b, int *chunks);
+void	ft_initial_iteration(t_list **a, t_list **b, int *chunks);
 int		*ft_generate_segments(t_list *lst);
 int		ft_is_in_range(int n, int i, int *chunks);
 int		ft_get_max_pos(t_list *lst);
@@ -69,5 +69,7 @@ void	ft_select_alg(t_list **a, t_list **b);
 void	ft_error_checking(t_list *lst);
 void	ft_error_handling(t_list *lst);
 int		ft_check_duplicates(t_list *lst);
+void	ft_clear_lists(t_list *a, t_list *b);
+void	ft_pb_and_update(t_list **a, t_list **b, t_list **prev, t_list **curr);
 int		ft_isint(char *n);
 void	ft_error(void);

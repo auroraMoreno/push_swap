@@ -6,11 +6,57 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/28 13:59:09 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/28 23:30:07 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_issorted(t_list *numbers)
+{
+	t_list	*curr;
+
+	if (!numbers)
+		return (0);
+	curr = numbers;
+	while (curr->next)
+	{
+		if (ft_atoi(curr->value) > ft_atoi(curr->next->value))
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
+}
+
+void	ft_select_alg(t_list **a, t_list **b)
+{
+	if (ft_lstsize(*a) == 2)
+		ft_swap_a(*a);
+	else if (ft_lstsize(*a) == 3)
+		ft_sort_three(a, b);
+	else if (ft_lstsize(*a) == 4)
+		ft_sort_four(a, b);
+	else if (ft_lstsize(*a) == 5)
+		ft_sort_five(a, b);
+	else
+		ft_do_alg(a, b);
+}
+
+void	ft_do_alg(t_list **a, t_list **b)
+{
+	int	*segments;
+
+	segments = ft_generate_segments(*a);
+	ft_move_to_b(a, b, segments);
+	ft_move_to_a(a, b);
+	free(segments);
+}
+
+void	ft_clear_lists(t_list *a, t_list *b)
+{
+	ft_lstclear(&a, NULL);
+	ft_lstclear(&b, NULL);
+}
 
 int	main(int argc, char **argv)
 {
@@ -35,10 +81,8 @@ int	main(int argc, char **argv)
 	if (ft_issorted(a) == 1)
 		exit(EXIT_SUCCESS);
 	ft_select_alg(&a, &b);
-	ft_print_list(a);
 	if (should_free == 1)
 		ft_free_arr(str_data);
-	ft_lstclear(&a, NULL);
-	ft_lstclear(&b, NULL);
+	ft_clear_lists(a, b);
 	return (0);
 }

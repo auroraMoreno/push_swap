@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:28:08 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/28 19:21:00 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:49:05 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,4 @@ void	ft_lst_del_elment(t_list *el, void (*del)(void *))
 	if (del)
 		del(el->value);
 	free(el);
-}
-
-int	ft_issorted(t_list *numbers)
-{
-	t_list	*curr;
-
-	if (!numbers)
-		return (0);
-	curr = numbers;
-	while (curr->next)
-	{
-		if (ft_atoi(curr->value) > ft_atoi(curr->next->value))
-			return (0);
-		curr = curr->next;
-	}
-	return (1);
 }

@@ -6,25 +6,11 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 12:19:12 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/28 12:52:59 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/28 23:23:42 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_select_alg(t_list **a, t_list **b)
-{
-	if (ft_lstsize(*a) == 2)
-		ft_swap_a(*a);
-	else if (ft_lstsize(*a) == 3)
-		ft_sort_three(a, b);
-	else if (ft_lstsize(*a) == 4)
-		ft_sort_four(a, b);
-	else if (ft_lstsize(*a) == 5)
-		ft_sort_five(a, b);
-	else
-		ft_do_alg(a, b);
-}
 
 int	ft_is_in_range(int n, int i, int *chunks)
 {
