@@ -6,13 +6,14 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/22 00:20:40 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:37:12 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+
 
 # include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
@@ -38,6 +39,7 @@ void ft_do_alg(t_list **a, t_list **b);
 void ft_move_to_a(t_list **a, t_list **b);
 int ft_move_to_b(t_list **a, t_list **b, int *chunks);
 int ft_chunk_has_elements(t_list *a, int i, int *chunks);
+void ft_chunk_has_elements_test(t_list **a, t_list **b, int *chunks);
 int *ft_generate_segments(t_list *lst);
 
 /*ALGORITHM UTILS*/
@@ -61,9 +63,9 @@ int ft_issorted(t_list *numbers); //cambiar esta de sitio
 /*OPERATIONS*/
 /* push */
 void ft_insert_first(t_list **lst, t_list *new_value);
-void ft_push(t_list **dest, t_list **src);
-void ft_pa(t_list  **a, t_list **b);
-void ft_pb(t_list **a, t_list **b);
+void ft_push(t_list **dest, t_list **src, int insert_next);
+void ft_pa(t_list  **a, t_list **b, int insert_next);
+void ft_pb(t_list **a, t_list **b, int insert_next);
 /* swap */
 void ft_swap_a(t_list *a);
 void ft_swap_b(t_list *b);
