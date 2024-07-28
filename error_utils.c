@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:51:51 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/28 13:52:58 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/29 00:03:07 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,6 @@ int	ft_isint(char *l)
 
 void	ft_error(void)
 {
-	ft_putendl_fd("Error\n", 2);
+	ft_putendl_fd("Error", 2);
 	exit(EXIT_FAILURE);
 }
