@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/29 18:41:12 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/29 20:18:22 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	else if (argc < 2 || (argc == 2 && !argv[1][0]))
-		return (ft_putendl_fd("Error", 2), 0);
+		return (ft_printf("Error\n"));
 	else if (argc == 2)
 	{
 		str_data = ft_split(argv[1], ' ');
