@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/28 23:27:16 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:41:46 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_list
 	void			*value;
 	struct s_list	*next;
 }	t_list;
-int		main(int argc, char **argv);
+
 void	ft_first_case(t_list **a, t_list **b);
 void	ft_second_case(t_list **a, t_list **b);
 void	ft_third_case(t_list **a, t_list **b);
@@ -69,7 +69,7 @@ void	ft_select_alg(t_list **a, t_list **b);
 void	ft_error_checking(t_list *lst);
 void	ft_error_handling(t_list *lst);
 int		ft_check_duplicates(t_list *lst);
-void	ft_clear_lists(t_list *a, t_list *b);
+void	ft_clear_lists(t_list *a, t_list *b, int should_free, char **str_data);
 void	ft_pb_and_update(t_list **a, t_list **b, t_list **prev, t_list **curr);
 int		ft_isint(char *n);
 void	ft_error(void);

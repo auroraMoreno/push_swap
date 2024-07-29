@@ -6,7 +6,7 @@
 /*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 10:30:23 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/29 13:44:55 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:41:12 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ void	ft_do_alg(t_list **a, t_list **b)
 	free(segments);
 }
 
-void	ft_clear_lists(t_list *a, t_list *b)
+void	ft_clear_lists(t_list *a, t_list *b, int should_free, char **str_data)
 {
+	if (should_free == 1)
+		ft_free_arr(str_data);
 	ft_lstclear(&a, NULL);
 	ft_lstclear(&b, NULL);
 }
@@ -66,7 +68,9 @@ int	main(int argc, char **argv)
 	int		should_free;
 
 	should_free = 0;
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
+	if (argc == 1)
+		return (0);
+	else if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (ft_putendl_fd("Error", 2), 0);
 	else if (argc == 2)
 	{
@@ -81,8 +85,6 @@ int	main(int argc, char **argv)
 	if (ft_issorted(a) == 1)
 		exit(EXIT_SUCCESS);
 	ft_select_alg(&a, &b);
-	if (should_free == 1)
-		ft_free_arr(str_data);
-	ft_clear_lists(a, b);
+	ft_clear_lists(a, b, should_free, str_data);
 	return (0);
 }
