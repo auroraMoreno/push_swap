@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
+/*   By: aumoreno <aumoreno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:20:19 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/29 00:21:54 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/30 08:30:15 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_pb_and_update(t_list **a, t_list **b, t_list **prev, t_list **curr)
 	*curr = next;
 }
 
-int	ft_move_to_b(t_list **a, t_list **b, int *chunks)
+void	ft_move_to_b(t_list **a, t_list **b, int *chunks)
 {
 	int	i;
 
@@ -55,7 +55,6 @@ int	ft_move_to_b(t_list **a, t_list **b, int *chunks)
 		}
 		i++;
 	}
-	return (i);
 }
 
 void	ft_move_to_a(t_list **a, t_list **b)

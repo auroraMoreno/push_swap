@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aumoreno < aumoreno@student.42madrid.co    +#+  +:+       +#+        */
+/*   By: aumoreno <aumoreno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 08:57:15 by aumoreno          #+#    #+#             */
-/*   Updated: 2024/07/29 18:41:46 by aumoreno         ###   ########.fr       */
+/*   Updated: 2024/07/30 08:30:03 by aumoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_sort_four(t_list **a, t_list **b);
 void	ft_sort_five(t_list **a, t_list **b);
 void	ft_do_alg(t_list **a, t_list **b);
 void	ft_move_to_a(t_list **a, t_list **b);
-int		ft_move_to_b(t_list **a, t_list **b, int *chunks);
+void	ft_move_to_b(t_list **a, t_list **b, int *chunks);
 int		ft_chunk_has_elements(t_list *a, int i, int *chunks);
 void	ft_initial_iteration(t_list **a, t_list **b, int *chunks);
 int		*ft_generate_segments(t_list *lst);
